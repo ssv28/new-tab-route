@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form Submitted data table</title>
+</head>
+<body>
+
+    <a href="/"><button>Home Page</button></a>
+    
+    <h1 style="text-align: center;">Form Submitted data</h1>
+
+
+    <div style="background-color: antiquewhite; font-size: 18px;">
+        <div style="display: flex; justify-content: center;">
+            <table width="100%" border="1" cellpadding="10px" cellspacing ="0">
+                
+                <tr>
+                    <th>NO</th>
+                    <th>NAME</th>
+                    <th>EMAIL</th>
+                    <th>GENDER</th>
+                    <th>CITY</th>
+                    <th>EDUCATION</th>
+                    <th>COURSE</th>
+                    <th>SKILLS</th>
+                    <th>ACTION</th>
+                </tr>
+
+                <% data.map((el, index)=> { %>
+                    <tr>
+                        <td>
+                            <%= index + 1 %>
+                        </td>
+                        <td>
+                            <%= el.name %>
+                        </td>
+                        <td>
+                            <%= el.email %>
+                        </td>
+                        <td>
+                            <%= el.gender%>
+                        </td>
+                        <td>
+                            <%= el.city %>
+                        </td>
+                        <td>
+                            <%= el.education %>
+                        </td>
+                        <td>
+                            <%= el.course %>
+                        </td>
+                        <td>
+                            <%= el.skills %>
+                        </td>
+                        <input type="hidden" name="index" value="<%= index %>">
+                        <td width="11%">&nbsp;
+                            <a href="/submit/?delid=<%=index%>"><button
+                                    style="background-color: red; color: aliceblue; font-size: 14px;">DELETE</button>
+                            </a>
+
+                            <a href="/?editid=<%=index%>">
+                                <button style="background-color: blue; color: aliceblue; font-size: 14px;">EDIT</button>
+                            </a>
+                        </td>
+
+                    </tr>
+
+                    <% }) %>
+
+            </table>
+        </div>
+    </div>
+</body>
+</html>

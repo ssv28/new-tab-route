@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        User Form
+    </title>
+</head>
+
+<body>
+
+    <a href="/submit"><button>Submitted Data Page</button></a><br><br>
+
+    <div>
+        <div
+            style=" border: 1px solid #000; width: 30%; padding: 15px; background-color :cadetblue; color: #fff; font-size: 18px;">
+            <h1 style="margin: 0; padding-bottom: 20px; text-align: center; text-decoration: underline;">User Form</h1>
+            <div style="display: flex; justify-content: center;">
+
+                <form action="/submit" method="get">
+    
+                    <input type="hidden" name="inputData" value="<%= editid %>">
+
+                    <label style="text-decoration :underline; font-weight: 900;">NAME</label> :
+                    <input type="text" name="name" required style="padding: 0px 60px;" value="<%= input.name %>"><br><br>
+
+
+                    <label style="text-decoration :underline; font-weight: 900;">EMAIL</label> :
+                    <input type="email" name="email" required style="padding: 0px 60px;" value="<%= input.email %>"><br><br>
+
+
+                    <label style="text-decoration :underline; font-weight: 900;">GENDER</label> : &nbsp;&nbsp;
+                    <input type="radio" name="gender" id="male" value="male" <% if(input.gender === "male") { %> checked <% } %> >
+                    <label for="male">Male</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="gender" id="female" value="female" <% if(input.gender === "female") { %> checked <% } %> >
+                    <label for="female">Female</label><br><br><br>
+
+
+                    <label for="city" style="text-decoration :underline; font-weight: 900;">CITY</label> <br><br>
+
+                    <select name="city" id="city">
+                        <option value="Surat">Surat</option>
+                        <option value="Ahmdabad">Ahmdabad</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Bengaluru">Bengaluru</option>
+                        <option value="Mumbai">Mumbai</option>
+                    </select>
+                    <br><br><br>
+
+
+
+                    <label style="text-decoration :underline; font-weight: 900;">EDUCATION</label> <br><br>
+
+                    <input id="it" type="radio" name="education" value="IT" <% if(input.education === "IT") { %> checked <% } %>>
+                    <label for="it">IT</label><br>
+
+                    <input id="bcom" type="radio" name="education" value="B.COM" <% if(input.education === "B.COM") { %> checked <% } %>>
+                    <label for="bcom">B.com</label><br>
+
+                    <input id="bca" type="radio" name="education" value="BCA" <% if(input.education === "BCA") { %> checked <% } %>>
+                    <label for="bca">Bca</label><br>
+
+                    <input id="bsc" type="radio" name="education" value="B.SC" <% if(input.education === "B.SC") { %> checked <% } %>>
+                    <label for="bsc">B.sc</label><br><br><br>
+
+
+
+                    <label style="text-decoration :underline; font-weight: 900;">COURSE</label><br><br>
+                    <input id="fs" type="radio" name="course" value="Full-stack Development"  <% if(input.course === "Full-stack Development") { %> checked <% } %>>
+                    <label for="fs">Full-stack Development</label><br>
+
+                    <input id="wb" type="radio" name="course" value="Web-Development" <% if(input.course === "Web-Development") { %> checked <% } %>>
+                    <label for="wb">Web-Development</label><br>
+
+                    <input id="fd" type="radio" name="course" value="Fullter Development" <% if(input.course === "Fullter Development") { %> checked <% } %>>
+                    <label for="fd">Fullter Development</label> <br>
+
+                    <input id="gd" type="radio" name="course" value="Gamming Development" <% if(input.course === "Gamming Development") { %> checked <% } %>>
+                    <label for="gd">Gamming Development</label><br><br><br>
+
+
+
+                    <label style="text-decoration :underline; font-weight: 900;">SKILLS</label> <br><br>
+                    <div style="display: flex;">
+                        <div>
+                            C,C++ or C# <input id="c" type="checkbox" name="skills" value="C,C++ or C#" <% if(input.skills && input.skills.includes("C,C++ or C#")) { %> checked <% } %> ><br>
+
+                            Python<input id="py" type="checkbox" name="skills" value="Python"<% if(input.skills && input.skills.includes("Python")) { %> checked <% } %> ><br>
+
+                            Kotlin<input id="kot" type="checkbox" name="skills" value="Kotlin" <% if(input.skills && input.skills.includes("Kotlin")) { %> checked <% } %> ><br>
+
+                            Html<input id="html" type="checkbox" name="skills" value="Html" <% if(input.skills && input.skills.includes("Html")) { %> checked <% } %>  ><br>
+                        </div>
+
+                        <div style="padding-left: 50px;">
+                            Bootstrap<input type="checkbox" name="skills" value="Bootstrap" <% if(input.skills && input.skills.includes("Bootstrap")) { %> checked <% } %> ><br>
+
+                            Javascript<input type="checkbox" name="skills" value="Javascript" <% if(input.skills && input.skills.includes("Javascript")) { %> checked <% } %> ><br>
+
+                            React js<input type="checkbox" name="skills" value="React js" <% if(input.skills && input.skills.includes("React js")) { %> checked <% } %> ><br>
+
+                            Node js<input type="checkbox" name="skills" value="Node js" <% if(input.skills && input.skills.includes("Node js")) { %> checked <% } %> ><br><br><br>
+                        </div>
+                    </div>
+
+
+                    <div style="display: flex; justify-content: center;">
+                        <button type="submit"
+                            style="padding: 5px 30px; background-color: green; color: aliceblue; font-size: 16px;">
+
+                            Submit
+
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
